@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "Firewall-Block-re0",
+    "_type": "search",
+    "_source": {
+      "title": "Firewall - Block - re0",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"661c2230-9b8b-11e9-8511-c367a495c24c\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query\":{\"query_string\":{\"query\":\"tags: firewall AND action: block AND iface: \\\"re0\\\"\",\"analyze_wildcard\":true}},\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "Firewall-Block",
+    "_type": "search",
+    "_source": {
+      "title": "Firewall - Block",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"661c2230-9b8b-11e9-8511-c367a495c24c\",\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647},\"query\":{\"query\":{\"query_string\":{\"query\":\"tags: firewall AND action: block\",\"analyze_wildcard\":true}},\"language\":\"lucene\"}}"
+      }
+    }
+  },
+  {
+    "_id": "PFSense-Firewall",
+    "_type": "search",
+    "_source": {
+      "title": "PFSense - Firewall",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"661c2230-9b8b-11e9-8511-c367a495c24c\",\"query\":{\"query\":{\"query_string\":{\"query\":\"tags: PFSense AND prog: filterlog\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "PFSense-DHCP",
+    "_type": "search",
+    "_source": {
+      "title": "PFSense - DHCP",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"661c2230-9b8b-11e9-8511-c367a495c24c\",\"query\":{\"query\":{\"query_string\":{\"query\":\"tags: PFSense AND prog: dhcpd\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "PFSense-IPsec",
+    "_type": "search",
+    "_source": {
+      "title": "PFSense - IPsec",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"661c2230-9b8b-11e9-8511-c367a495c24c\",\"query\":{\"query\":{\"query_string\":{\"query\":\"tags: PFSense AND prog: charon\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[],\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"require_field_match\":false,\"fragment_size\":2147483647}}"
+      }
+    }
+  },
+  {
+    "_id": "60218c60-9ea3-11e9-a29e-e90e785eaada",
+    "_type": "search",
+    "_source": {
+      "title": "Firewall - Pass - re0",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "_source"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"661c2230-9b8b-11e9-8511-c367a495c24c\",\n  \"highlightAll\": true,\n  \"version\": true,\n  \"query\": {\n    \"query\": \"tags: firewall AND action: pass AND iface: \\\"re0\\\"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": []\n}"
+      }
+    }
+  }
+]

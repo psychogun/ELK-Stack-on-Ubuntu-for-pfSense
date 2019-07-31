@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "c7f06440-9eaa-11e9-a29e-e90e785eaada",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Firewall - External Pass",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":8,\"w\":24,\"h\":8,\"i\":\"2\"},\"id\":\"7dac4970-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":17,\"w\":48,\"h\":5,\"i\":\"3\"},\"id\":\"96419f30-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{\"mapCenter\":[21.616579336740603,-25.312500000000004],\"mapZoom\":2},\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":17,\"i\":\"4\"},\"id\":\"4c4a1330-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":38,\"y\":22,\"w\":10,\"h\":8,\"i\":\"6\"},\"id\":\"c9d693f0-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":22,\"w\":13,\"h\":8,\"i\":\"7\"},\"id\":\"e17aabe0-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":0,\"y\":30,\"w\":17,\"h\":15,\"i\":\"8\"},\"id\":\"f5e71870-9eab-11e9-a29e-e90e785eaada\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":26,\"y\":22,\"w\":11,\"h\":8,\"i\":\"9\"},\"id\":\"353bdd30-9eac-11e9-a29e-e90e785eaada\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":30,\"w\":24,\"h\":15,\"i\":\"10\"},\"id\":\"5bde0030-9eac-11e9-a29e-e90e785eaada\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":10,\"h\":8,\"i\":\"11\"},\"id\":\"6f7d1530-9ead-11e9-a29e-e90e785eaada\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.8.1\"},{\"gridData\":{\"x\":13,\"y\":22,\"w\":12,\"h\":8,\"i\":\"12\"},\"version\":\"6.8.1\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"id\":\"67f76510-9eb0-11e9-a29e-e90e785eaada\",\"embeddableConfig\":{}},{\"gridData\":{\"x\":34,\"y\":0,\"w\":11,\"h\":8,\"i\":\"13\"},\"version\":\"6.8.1\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"id\":\"fb56e740-9eb0-11e9-a29e-e90e785eaada\",\"embeddableConfig\":{}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]
