@@ -1,4 +1,4 @@
-# How to install the Elastic Stack on Ubuntu and use it with pfSense
+# How to install the ELK Stack on Ubuntu for pfSense
 So, on a whim I googled syslog + pfsense, and I saw some images of some nice dashboards (Kibana) for the firewall logs from pfSense. The tutorials I found did not tell me exactly how this all works, particularly how Elasticsearch, Logstash and Kibana work together. 
 
 These instructions will tell you what I have learned and how I installed the Elastic Stack (Elasticsearch, Logstash, Kibana, Beats and SHIELD) on Ubuntu with encrypted communication, so that I could have a nice visualization of my pfSense firewall logs with syslogs and netflow.
