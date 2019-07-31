@@ -1,165 +1,32 @@
-## Welcome to pfSense + ELK
+# How to install Elastic Stack 7.2 on Ubuntu 18.04 LTS and use it with pfSense 2.4.4
+So, on a whim I googled syslog + pfsense, and I saw some images of some nice dashboards (Kibana) for the firewall logs from pfSense. The tutorials I found did not tell me exactly how this all works, particularly how Elasticsearch, Logstash and Kibana work together. 
 
-You can view installation guide guide on [3ilson.org YouTube Channel ](https://www.youtube.com/3ilsonorg).
+These instructions will tell you what I have learned and how I installed the Elastic Stack (Elasticsearch, Logstash, Kibana, Beats and SHIELD) on Ubuntu with encrypted communication, so that I could have a nice visualization of my pfSense firewall logs with syslogs and netflow.
 
-### Prerequisites 
-- Ubuntu Server v18.04+
-- pfSense v2.4.4+ or OPNsense 19.1.1+
+## Prerequisites
+* Clean Ubuntu 18.04 LTS 
+* Java 8
+* Elasticsearch 7.2 
+* Logstash 7.2
+* Kibana 7.2
+* pfSense 2.4.4
 
-# Preparation
+# Instructions
+For installation instructions, go to https://psychogun.github.io/docs/linux/ELK-stack-on-Ubuntu-with-pfSense/
 
-### 1. Add Oracle Java Repository
-```
-sudo add-apt-repository ppa:linuxuprising/java
-```
-
-### 2. Download and install the public GPG signing key
-```
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
-```
-
-### 3. Download and install apt-transport-https package 
-```
-sudo apt-get install apt-transport-https
-```
-
-### 4. Add Elasticsearch|Logstash|Kibana Repositories (version 7+) 
-```
-echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
-```
-
-### 5. Update
-```
-sudo apt-get update
-```
-
-### 6. Install Java 11
-```
-sudo apt install oracle-java11-installer
-```
-
-# Install
-- Elasticsearch v7+ | Kibana v7+ | Logstash v7+
-
-### 8. Install Elasticsearch|Kibana|Logstash
-```
-sudo apt-get install elasticsearch && sudo apt-get install kibana && sudo apt-get install logstash
-```
-
-# Configure Kibana|v7+
-
-### 9. Configure Kibana
-```
-sudo nano /etc/kibana/kibana.yml
-```
-
-### 10. Amend host file (/etc/kibana/kibana.yml)
-```
-server.port: 5601
-server.host: "0.0.0.0"
-```
-
-# Configure Logstash|v7+
-
-### 11. Change Directory
-```
-cd /etc/logstash/conf.d
-```
-
-### 12. Download the following configuration files
-```
-sudo wget https://raw.githubusercontent.com/a3ilson/pfelk/master/01-inputs.conf
-```
-
-```
-sudo wget https://raw.githubusercontent.com/a3ilson/pfelk/master/10-syslog.conf
-```
-
-```
-sudo wget https://raw.githubusercontent.com/a3ilson/pfelk/master/11-pfsense.conf
-```
-
-```
-sudo wget https://raw.githubusercontent.com/a3ilson/pfelk/master/30-outputs.conf
-```
-
-### 13. Make Patterns Folder
-```
-sudo mkdir /etc/logstash/conf.d/patterns
-```
-
-### 14. Navigate to Patterns Folder
-```
-cd /etc/logstash/conf.d/patterns/
-```
-
-### 15. Download the following configuration file
-```
-sudo wget https://raw.githubusercontent.com/a3ilson/pfelk/master/pfsense_2_4_2.grok
-```
-
-### 16. Edit (10-syslog.conf)arkdown
-```
-sudo nano /etc/logstash/conf.d/10-syslog.conf
-```
-
-### 17. Revise/Update w/pfsense IP address (10-syslog.conf)
-```
-Change line 3; the "if [host]..." should point to your pfSense IP address
-Change line 9 to point to your second PfSense IP address or comment out
-```
-
-### 18. Edit (11-pfsense.conf)
-```
-sudo nano /etc/logstash/conf.d/11-pfsense.conf
-```
-
-### 19. Resive/Update timezone
-```
-Change line 12 to the same timezone as your phSense configruation
-_Note if the timezone is offset or mismatched, you may not see any logs_
-```
-
-### 20. Download and install the MaxMind GeoIP database
-```
-cd /etc/logstash
-```
-
-### 21. Download and install the MaxMind GeoIP database
-```
-sudo wget http://geolite.maxmind.com/download/geoip/database/GeoLite2-City.mmdb.gz
-```
-
-### 22. Download and install the MaxMind GeoIP database
-```
-sudo gunzip GeoLite2-City.mmdb.gz
-```
-
-# Configure Services
-
-### Start Services on Boot as Services (you'll need to reboot or start manually to proceed)
-```
-sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable elasticsearch.service
-sudo /bin/systemctl enable kibana.service
-sudo /bin/systemctl enable logstash.service
-```
-
-### Start Services Manually
-```
-sudo -i service elasticsearch start
-sudo -i service kibana start
-sudo -i service logstash start
-```
-
-### Status
-```
-systemctl status elasticsearch.service
-systemctl status kibana.service
-systemctl status logstash.service
-```
-
-### Troubleshooting
-```/var/log/logstash
-cat/nano/vi the files within this location to view Logstash logs
-```
+## Acknowledgments
+* http://pfelk.3ilson.com
+* https://arnaudloos.com/2019/enable-x-pack-security/
+* https://extelligenceblog.it/2017/10/18/elasticstack-elk-and-pfsense-firewall-ip-traffic-statistics-with-netflow/
+* https://help.ubuntu.com/lts/serverguide/certificates-and-security.html
+* https://github.com/solvaholic/solvaholic.github.io/wiki/Netflow-with-pfSense-and-ELK
+* https://www.elastic.co/elk-stack
+* https://github.com/patrickjennings/logstash-pfsense
+* https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-18-04-ubuntu-16-04.html
+* https://logz.io/blog/elk-stack-raspberry-pi/
+* https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/how-to-install-elasticsearch-logstash-and-kibana-elk-stack-on-ubuntu-18-04-ubuntu-16-04.html
+* http://extelligenceblog.it/2017/07/11/elastic-stack-suricata-idps-and-pfsense-firewall-part-1/
+* https://forum.netgate.com/topic/107735/elk-pfsense-2-3-working/2
+* https://vitux.com/how-to-setup-java_home-path-in-ubuntu/
+* http://secretwafflelabs.com/2015/11/06/pfsense-elk/
+* https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html#plugins-filters-grok-patterns_dir
